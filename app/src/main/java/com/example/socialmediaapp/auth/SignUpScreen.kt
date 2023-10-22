@@ -92,7 +92,7 @@ fun SignUpScreen(navController: NavController, vm: AppViewModel) {
 
             Button(
                 onClick = {
-                    vm.onSignUp(
+                    vm.onSignup(
                         usernameState.value.text,
                         emailState.value.text,
                         passState.value.text
