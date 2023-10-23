@@ -1,8 +1,7 @@
-package com.example.socialmediaapp.main
+package com.example.socialmediaapp.views
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
@@ -13,7 +12,6 @@ import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
@@ -28,8 +26,10 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.socialmediaapp.AppViewModel
-import com.example.socialmediaapp.DestinationScreen
+import com.example.socialmediaapp.viewmodels.AppViewModel
+import com.example.socialmediaapp.navigation.DestinationScreen
+import com.example.socialmediaapp.utils.NavParam
+import com.example.socialmediaapp.utils.navigateTo
 
 @Composable
 fun SearchScreen(navController: NavController, vm: AppViewModel) {

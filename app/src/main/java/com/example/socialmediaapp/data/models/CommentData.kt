@@ -1,4 +1,4 @@
-package com.example.socialmediaapp.data
+package com.example.socialmediaapp.data.models
 
 data class CommentData(
     val commentId: String? = null,

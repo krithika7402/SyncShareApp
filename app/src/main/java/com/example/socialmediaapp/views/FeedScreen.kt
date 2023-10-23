@@ -1,4 +1,4 @@
-package com.example.socialmediaapp.main
+package com.example.socialmediaapp.views
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.background
@@ -30,9 +30,15 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.socialmediaapp.AppViewModel
-import com.example.socialmediaapp.DestinationScreen
-import com.example.socialmediaapp.data.PostData
+import com.example.socialmediaapp.viewmodels.AppViewModel
+import com.example.socialmediaapp.data.models.PostData
+import com.example.socialmediaapp.navigation.DestinationScreen
+import com.example.socialmediaapp.utils.CommonImage
+import com.example.socialmediaapp.utils.CommonProgressSpinner
+import com.example.socialmediaapp.utils.LikeAnimation
+import com.example.socialmediaapp.utils.NavParam
+import com.example.socialmediaapp.utils.UserImageCard
+import com.example.socialmediaapp.utils.navigateTo
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -40,7 +46,6 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun FeedScreen(navController: NavController, vm: AppViewModel) {
-
     val userDataLoading = vm.inProgress.value
     val userData = vm.userData.value
     val personalizedFeed = vm.postsFeed.value
@@ -51,14 +56,6 @@ fun FeedScreen(navController: NavController, vm: AppViewModel) {
             .fillMaxSize()
             .background(Color.LightGray)
     ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .wrapContentHeight()
-                .background(Color.White)
-        ) {
-            UserImageCard(userImage = userData?.imageUrl ?: "")
-        }
         PostsList(
             posts = personalizedFeed,
             modifier = Modifier.weight(1f),
@@ -73,7 +70,6 @@ fun FeedScreen(navController: NavController, vm: AppViewModel) {
             navController = navController
         )
     }
-
 }
 
 @Composable

@@ -1,4 +1,4 @@
-package com.example.socialmediaapp.main
+package com.example.socialmediaapp.utils
 
 import android.os.Parcelable
 import android.widget.Toast
@@ -35,11 +35,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil.compose.ImagePainter
-import coil.compose.ImagePainter.State.Empty.painter
 import coil.compose.rememberImagePainter
-import com.example.socialmediaapp.AppViewModel
-import com.example.socialmediaapp.DestinationScreen
+import com.example.socialmediaapp.viewmodels.AppViewModel
 import com.example.socialmediaapp.R
+import com.example.socialmediaapp.navigation.DestinationScreen
 
 @Composable
 fun NotificationMessage(vm: AppViewModel) {
@@ -138,7 +137,7 @@ fun CommonDivider() {
         thickness = 1.dp,
         modifier = Modifier
             .alpha(0.3f)
-            .padding(top = 8.dp, bottom = 8.dp)
+            .padding(top = 3.dp, bottom = 3.dp)
     )
 }
 
@@ -170,7 +169,7 @@ fun LikeAnimation(like: Boolean = true) {
         painter = painterResource(id = if (like) R.drawable.ic_like else R.drawable.ic_dislike),
         contentDescription = null,
         modifier = Modifier.size(size = size),
-        colorFilter = ColorFilter.tint(if (like) Color.Red else Color.Gray)
+        colorFilter = ColorFilter.tint(if (like) Color.White else Color.Gray)
     )
     sizeState = LikeIconSize.LARGE
 }

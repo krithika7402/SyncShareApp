@@ -1,4 +1,4 @@
-package com.example.socialmediaapp.main
+package com.example.socialmediaapp.views
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -26,8 +26,9 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.socialmediaapp.AppViewModel
-import com.example.socialmediaapp.data.CommentData
+import com.example.socialmediaapp.viewmodels.AppViewModel
+import com.example.socialmediaapp.data.models.CommentData
+import com.example.socialmediaapp.utils.CommonProgressSpinner
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

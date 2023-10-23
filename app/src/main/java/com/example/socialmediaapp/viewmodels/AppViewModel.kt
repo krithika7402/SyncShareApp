@@ -1,13 +1,18 @@
-package com.example.socialmediaapp
+package com.example.socialmediaapp.viewmodels
 
 import android.net.Uri
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
-import com.example.socialmediaapp.data.CommentData
+import com.example.socialmediaapp.data.models.CommentData
 import com.example.socialmediaapp.data.Event
-import com.example.socialmediaapp.data.PostData
-import com.example.socialmediaapp.data.UserData
+import com.example.socialmediaapp.data.models.PostData
+import com.example.socialmediaapp.data.models.UserData
+import com.example.socialmediaapp.navigation.DestinationScreen
+import com.example.socialmediaapp.utils.COMMENTS
+import com.example.socialmediaapp.utils.POSTS
+import com.example.socialmediaapp.utils.USERS
+import com.example.socialmediaapp.utils.navigateTo
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
@@ -18,9 +23,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import java.util.UUID
 import javax.inject.Inject
 
-const val USERS = "users"
-const val POSTS = "posts"
-const val COMMENTS = "comments"
+
 @HiltViewModel
 class AppViewModel @Inject constructor(
     val auth: FirebaseAuth,
@@ -384,7 +387,7 @@ class AppViewModel @Inject constructor(
     private fun getGeneralFeed() {
         postsFeedProgress.value = true
         val currentTime = System.currentTimeMillis()
-        val difference = 24 * 60 * 60 * 1000 // 1 day in millis
+        val difference = 24 * 60 * 60 * 1000
         db.collection(POSTS)
             .whereGreaterThan("time", currentTime - difference)
             .get()

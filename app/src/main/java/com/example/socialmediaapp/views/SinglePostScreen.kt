@@ -1,4 +1,4 @@
-package com.example.socialmediaapp.main
+package com.example.socialmediaapp.views
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -26,10 +26,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil.compose.rememberImagePainter
-import com.example.socialmediaapp.AppViewModel
-import com.example.socialmediaapp.DestinationScreen
+import com.example.socialmediaapp.viewmodels.AppViewModel
 import com.example.socialmediaapp.R
-import com.example.socialmediaapp.data.PostData
+import com.example.socialmediaapp.data.models.PostData
+import com.example.socialmediaapp.navigation.DestinationScreen
+import com.example.socialmediaapp.utils.CommonDivider
+import com.example.socialmediaapp.utils.CommonImage
 
 @Composable
 fun SinglePostScreen(navController: NavController, vm: AppViewModel, post: PostData) {
@@ -86,11 +88,9 @@ fun SinglePostDisplay(
                 )
             }
 
-            Text(text = post.username ?: "")
-            Text(text = ".", modifier = Modifier.padding(8.dp))
+            Text(text = post.username + " | "?: "")
 
             if (userData?.userId == post.userId) {
-                // Current user's post. Don't show anything
             } else if (userData?.following?.contains(post.userId) == true) {
                 Text(
                     text = "Following",
@@ -141,6 +141,7 @@ fun SinglePostDisplay(
                     post.postId?.let {
                         navController.navigate(DestinationScreen.CommentsScreen.createRoute(it))
                     }
-                })
+                }
+        )
     }
 }

@@ -1,4 +1,4 @@
-package com.example.socialmediaapp.main
+package com.example.socialmediaapp.views
 
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -20,7 +20,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
@@ -30,15 +29,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.socialmediaapp.AppViewModel
-import com.example.socialmediaapp.DestinationScreen
+import com.example.socialmediaapp.viewmodels.AppViewModel
 import com.example.socialmediaapp.R
-import com.example.socialmediaapp.data.PostData
+import com.example.socialmediaapp.data.models.PostData
+import com.example.socialmediaapp.navigation.DestinationScreen
+import com.example.socialmediaapp.utils.CommonImage
+import com.example.socialmediaapp.utils.CommonProgressSpinner
+import com.example.socialmediaapp.utils.NavParam
+import com.example.socialmediaapp.utils.UserImageCard
+import com.example.socialmediaapp.utils.navigateTo
 
 data class PostRow(
     var post1: PostData? = null,

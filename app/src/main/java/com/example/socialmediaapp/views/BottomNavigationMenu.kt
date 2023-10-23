@@ -1,4 +1,4 @@
-package com.example.socialmediaapp.main
+package com.example.socialmediaapp.views
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -15,9 +15,9 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import coil.compose.ImagePainter.State.Empty.painter
-import com.example.socialmediaapp.DestinationScreen
 import com.example.socialmediaapp.R
+import com.example.socialmediaapp.navigation.DestinationScreen
+import com.example.socialmediaapp.utils.navigateTo
 
 enum class BottomNavigationItem(val icon: Int, val navDestination: DestinationScreen) {
     FEED(R.drawable.baseline_home, DestinationScreen.Feed),

@@ -97,5 +97,7 @@ dependencies {
     implementation ("com.google.firebase:firebase-storage-ktx")
 
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
+    implementation("androidx.compose.ui:ui-text-google-fonts:1.5.2")
+
 
 }

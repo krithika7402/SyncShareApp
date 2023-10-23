@@ -1,4 +1,4 @@
-package com.example.socialmediaapp
+package com.example.socialmediaapp.di
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth

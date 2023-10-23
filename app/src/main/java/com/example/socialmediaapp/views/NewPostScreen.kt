@@ -1,4 +1,4 @@
-package com.example.socialmediaapp.main
+package com.example.socialmediaapp.views
 
 import android.net.Uri
 import androidx.compose.foundation.Image
@@ -29,7 +29,9 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil.compose.rememberImagePainter
-import com.example.socialmediaapp.AppViewModel
+import com.example.socialmediaapp.utils.CommonDivider
+import com.example.socialmediaapp.utils.CommonProgressSpinner
+import com.example.socialmediaapp.viewmodels.AppViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

@@ -1,4 +1,4 @@
-package com.example.socialmediaapp.auth
+package com.example.socialmediaapp.views.auth
 
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -32,12 +32,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.socialmediaapp.AppViewModel
-import com.example.socialmediaapp.DestinationScreen
-import com.example.socialmediaapp.main.CommonDivider
-import com.example.socialmediaapp.main.CommonImage
-import com.example.socialmediaapp.main.CommonProgressSpinner
-import com.example.socialmediaapp.main.navigateTo
+import com.example.socialmediaapp.viewmodels.AppViewModel
+import com.example.socialmediaapp.utils.CommonDivider
+import com.example.socialmediaapp.utils.CommonImage
+import com.example.socialmediaapp.utils.CommonProgressSpinner
+import com.example.socialmediaapp.utils.navigateTo
+import com.example.socialmediaapp.navigation.DestinationScreen
 
 @Composable
 fun ProfileScreen(navController: NavController, vm: AppViewModel) {
